@@ -52,6 +52,30 @@ ZipArchive::Ptr ZipFile::Open(const std::string& zipPath)
   return ZipArchive::Create(zipFile, true);
 }
 
+ZipArchive::Ptr ZipFile::Open(const std::wstring& zipPath)
+{
+	std::ifstream* zipFile = new std::ifstream();
+	zipFile->open(zipPath, std::ios::binary);
+
+	if (!zipFile->is_open())
+	{
+		// if file does not exist, try to create it
+		std::ofstream tmpFile;
+		tmpFile.open(zipPath, std::ios::binary);
+		tmpFile.close();
+
+		zipFile->open(zipPath, std::ios::binary);
+
+		// if attempt to create file failed, throw an exception
+		if (!zipFile->is_open())
+		{
+			throw std::runtime_error("cannot open zip file");
+		}
+	}
+
+	return ZipArchive::Create(zipFile, true);
+}
+
 void ZipFile::Save(ZipArchive::Ptr zipArchive, const std::string& zipPath)
 {
   ZipFile::SaveAndClose(zipArchive, zipPath);

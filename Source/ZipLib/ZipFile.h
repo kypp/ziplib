@@ -23,6 +23,16 @@ class ZipFile
      */
     static ZipArchive::Ptr Open(const std::string& zipPath);
 
+	/**
+	* \brief Opens the zip archive file with the given filename.
+	*
+	* \param zipPath Full pathname of the zip file.
+	*
+	* \return The ZipArchive instance.
+	*/
+	static ZipArchive::Ptr Open(const std::wstring& zipPath);
+
+
     /**
      * \brief Saves the zip archive file with the given filename.
      *        The ZipArchive class will stay open.

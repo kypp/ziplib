@@ -136,7 +136,10 @@ class ZipArchive
      *
      * \param other The instance to swap with.
      */
-    void Swap(ZipArchive::Ptr other);
+	void Swap(ZipArchive::Ptr other);
+
+
+	void InternalDestroy();
 
   private:
     ZipArchive();
@@ -153,7 +156,6 @@ class ZipArchive
     bool ReadEndOfCentralDirectory();
     bool SeekToSignature(uint32_t signature, SeekDirection direction);
 
-    void InternalDestroy();
 
     detail::EndOfCentralDirectoryBlock _endOfCentralDirectoryBlock;
     std::vector<ZipArchiveEntry::Ptr> _entries;

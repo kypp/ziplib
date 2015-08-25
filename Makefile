@@ -1,17 +1,17 @@
 # Final names of binaries
 EXECUTABLE = Bin/zipsample
-SO_LIBRARY = Bin/libzip.so
+SO_LIBRARY = Bin/libzip.a
 
 # C & C++ compiler
 #CC       = gcc
 #CXX      = g++-4.8
 CC        = clang
 CXX       = clang++
-CFLAGS    = -fPIC -Wno-enum-conversion -O3
-CXXFLAGS  = -fPIC -std=c++11 -O3
+CFLAGS    = -m32 -fPIC -Wno-enum-conversion -O3
+CXXFLAGS  = -m32 -fPIC -std=c++11 -O3
 
 # Linker flags
-LDFLAGS   = -pthread
+LDFLAGS   = -m32 -pthread
 
 # Sources of external libraries
 SRC_ZLIB  = $(wildcard Source/ZipLib/extlibs/zlib/*.c)
@@ -37,7 +37,7 @@ $(EXECUTABLE): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) Source/Sample/Main.cpp -o $@ $^
 
 $(SO_LIBRARY): $(OBJS)
-	$(CXX) $(LDFLAGS) -shared -o $@ $^
+	ar -cr $@ $^
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -50,4 +50,4 @@ clean:
 
 tarball:
 	tar -zcvf ziplib.tar.gz *
-	
+

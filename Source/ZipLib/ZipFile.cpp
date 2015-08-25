@@ -52,19 +52,47 @@ ZipArchive::Ptr ZipFile::Open(const std::string& zipPath)
   return ZipArchive::Create(zipFile, true);
 }
 
+#ifdef _WIN32
+std::wstring getFilename(const std::wstring& ws)
+{
+  return ws;
+}
+#else
+#include <clocale>
+std::string getFilename(const std::wstring& ws)
+{
+  size_t len = ws.size() * 4 + 1;
+  char result_string[len];
+
+  std::setlocale(LC_ALL, "");
+  auto count = std::wcstombs(result_string, ws.c_str(), len);
+
+  // if (count == (size_t)-1)
+  // {
+  //  std::setlocale(LC_ALL, "C");
+  //  count = std::wcstombs(result_string, ws.c_str(), len);
+  // }
+
+  if (count != (size_t)-1)
+    result_string[count] = 0;
+
+  return std::string(result_string, count+1);
+}
+#endif
+
 ZipArchive::Ptr ZipFile::Open(const std::wstring& zipPath)
 {
 	std::ifstream* zipFile = new std::ifstream();
-	zipFile->open(zipPath, std::ios::binary);
+	zipFile->open(getFilename(zipPath), std::ios::binary);
 
 	if (!zipFile->is_open())
 	{
 		// if file does not exist, try to create it
 		std::ofstream tmpFile;
-		tmpFile.open(zipPath, std::ios::binary);
+		tmpFile.open(getFilename(zipPath), std::ios::binary);
 		tmpFile.close();
 
-		zipFile->open(zipPath, std::ios::binary);
+		zipFile->open(getFilename(zipPath), std::ios::binary);
 
 		// if attempt to create file failed, throw an exception
 		if (!zipFile->is_open())

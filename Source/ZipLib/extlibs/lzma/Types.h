@@ -66,6 +66,8 @@ typedef unsigned int UInt32;
 #endif
 #else
 #ifdef __APPLE__
+#include <stdint.h>
+typedef int32_t Int32;
 #include <MacTypes.h>
 #endif
 #endif

@@ -22,14 +22,8 @@
     <Filter Include="Header Files\compression\deflate">
       <UniqueIdentifier>{9b9acd63-f31e-4cb5-909f-aebfe102951f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\compression\lzma">
-      <UniqueIdentifier>{d4c8cff5-e22e-45fd-8273-a61104dbc01f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\streams\streambuffs">
       <UniqueIdentifier>{893f10de-143e-4d88-9a4e-691eb8b10c3a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\compression\lzma\detail">
-      <UniqueIdentifier>{cb5f7d4e-815f-4713-8a1b-e6af9c7b16dd}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\utils">
       <UniqueIdentifier>{3b08c920-2447-4e03-b415-76ef3accef84}</UniqueIdentifier>
@@ -45,9 +39,6 @@
     </Filter>
     <Filter Include="Source Files\detail">
       <UniqueIdentifier>{380a885f-3111-4777-a9f2-e6ced1c8b912}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\compression\bzip2">
-      <UniqueIdentifier>{97bbccd3-0914-492c-94c1-20dfd544f0fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,33 +62,6 @@
     </ClInclude>
     <ClInclude Include="compression\deflate\deflate_encoder_properties.h">
       <Filter>Header Files\compression\deflate</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\detail\lzma_alloc.h">
-      <Filter>Header Files\compression\lzma\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\detail\lzma_handle.h">
-      <Filter>Header Files\compression\lzma\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\detail\lzma_header.h">
-      <Filter>Header Files\compression\lzma\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\detail\lzma_in_stream.h">
-      <Filter>Header Files\compression\lzma\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\detail\lzma_out_stream.h">
-      <Filter>Header Files\compression\lzma\detail</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\lzma_decoder.h">
-      <Filter>Header Files\compression\lzma</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\lzma_decoder_properties.h">
-      <Filter>Header Files\compression\lzma</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\lzma_encoder.h">
-      <Filter>Header Files\compression\lzma</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\lzma\lzma_encoder_properties.h">
-      <Filter>Header Files\compression\lzma</Filter>
     </ClInclude>
     <ClInclude Include="streams\compression_decoder_stream.h">
       <Filter>Header Files\streams</Filter>
@@ -162,9 +126,6 @@
     <ClInclude Include="methods\DeflateMethod.h">
       <Filter>Header Files\methods</Filter>
     </ClInclude>
-    <ClInclude Include="methods\LzmaMethod.h">
-      <Filter>Header Files\methods</Filter>
-    </ClInclude>
     <ClInclude Include="methods\StoreMethod.h">
       <Filter>Header Files\methods</Filter>
     </ClInclude>
@@ -194,21 +155,6 @@
     </ClInclude>
     <ClInclude Include="compression\compression_interface.h">
       <Filter>Header Files\compression</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\bzip2\bzip2_encoder.h">
-      <Filter>Header Files\compression\bzip2</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\bzip2\bzip2_decoder.h">
-      <Filter>Header Files\compression\bzip2</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\bzip2\bzip2_encoder_properties.h">
-      <Filter>Header Files\compression\bzip2</Filter>
-    </ClInclude>
-    <ClInclude Include="compression\bzip2\bzip2_decoder_properties.h">
-      <Filter>Header Files\compression\bzip2</Filter>
-    </ClInclude>
-    <ClInclude Include="methods\Bzip2Method.h">
-      <Filter>Header Files\methods</Filter>
     </ClInclude>
     <ClInclude Include="streams\streambuffs\null_streambuf.h">
       <Filter>Header Files\streams\streambuffs</Filter>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -27,24 +27,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="compression\bzip2\bzip2_decoder.h" />
-    <ClInclude Include="compression\bzip2\bzip2_decoder_properties.h" />
-    <ClInclude Include="compression\bzip2\bzip2_encoder.h" />
-    <ClInclude Include="compression\bzip2\bzip2_encoder_properties.h" />
     <ClInclude Include="compression\compression_interface.h" />
     <ClInclude Include="compression\deflate\deflate_decoder.h" />
     <ClInclude Include="compression\deflate\deflate_decoder_properties.h" />
     <ClInclude Include="compression\deflate\deflate_encoder.h" />
     <ClInclude Include="compression\deflate\deflate_encoder_properties.h" />
-    <ClInclude Include="compression\lzma\detail\lzma_alloc.h" />
-    <ClInclude Include="compression\lzma\detail\lzma_handle.h" />
-    <ClInclude Include="compression\lzma\detail\lzma_header.h" />
-    <ClInclude Include="compression\lzma\detail\lzma_in_stream.h" />
-    <ClInclude Include="compression\lzma\detail\lzma_out_stream.h" />
-    <ClInclude Include="compression\lzma\lzma_decoder.h" />
-    <ClInclude Include="compression\lzma\lzma_decoder_properties.h" />
-    <ClInclude Include="compression\lzma\lzma_encoder.h" />
-    <ClInclude Include="compression\lzma\lzma_encoder_properties.h" />
     <ClInclude Include="compression\store\store_decoder.h" />
     <ClInclude Include="compression\store\store_decoder_properties.h" />
     <ClInclude Include="compression\store\store_encoder.h" />
@@ -53,10 +40,8 @@
     <ClInclude Include="detail\ZipCentralDirectoryFileHeader.h" />
     <ClInclude Include="detail\ZipGenericExtraField.h" />
     <ClInclude Include="detail\ZipLocalFileHeader.h" />
-    <ClInclude Include="methods\Bzip2Method.h" />
     <ClInclude Include="methods\DeflateMethod.h" />
     <ClInclude Include="methods\ICompressionMethod.h" />
-    <ClInclude Include="methods\LzmaMethod.h" />
     <ClInclude Include="methods\StoreMethod.h" />
     <ClInclude Include="methods\ZipMethodResolver.h" />
     <ClInclude Include="streams\compression_decoder_stream.h" />
@@ -93,12 +78,6 @@
     <ClCompile Include="ZipFile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="extlibs\bzip2\bzip2.vcxproj">
-      <Project>{dbbf348d-c221-4f2e-8a0d-24efa0d98e71}</Project>
-    </ProjectReference>
-    <ProjectReference Include="extlibs\lzma\lzma.vcxproj">
-      <Project>{7ead1358-3e72-4fb6-a212-25d462b5c1e9}</Project>
-    </ProjectReference>
     <ProjectReference Include="extlibs\zlib\zlib.vcxproj">
       <Project>{baeb16b3-db4c-432f-9e6a-2acadea0691d}</Project>
     </ProjectReference>
@@ -107,44 +86,45 @@
     <ProjectGuid>{5C9FD859-DDF9-4510-8397-B329B0AE8C48}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ZipLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_profiling|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_profiling|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>

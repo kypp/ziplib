@@ -1,7 +1,5 @@
 set (MODULE_NAME ziplib)
 
-add_subdirectory (extlibs/bzip2)
-add_subdirectory (extlibs/lzma)
 add_subdirectory (extlibs/zlib)
 
 include_directories(.)
